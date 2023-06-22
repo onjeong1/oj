@@ -1,0 +1,56 @@
+---
+title: CV
+name: 'On Jeong'
+surname: 'Jeong'
+position: "Sophomore"
+address: "117-17, Myeongdal-ro 9-gil, Seocho-gu, Seoul"
+phone: 010-7504-3918
+email: "oj_0425@naver.com"
+github: onjeong1
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Marie is a Polish and naturalized-French physicist and chemist who conducts pioneering research on radioactivity."
+output:
+  vitae::markdowncv:
+    theme: kjhealy
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+```
+
+## summary
+ * As a student majoring in business administration, I've worked as a customer service representative and as a fitting model in the fashion business. I don't have a license yet, so I'm lacking a lot, but I think these various experiences will help me in the job.
+ 
+## working experience
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "2021.12-2022.2", "Get a part-time job serving at a meat restaurant", "Don Restaurant in Gwangju, Jeollanam-do,",
+  "2022.8-2022.12", "English Language School Assistant", "Smart Solution English Moon Hyun Solution Class in Seoul",
+  "2022.3-", "Fitting model", "Online shopping mall"
+) %>%
+  brief_entries(
+    Type,
+    Year,
+    Desc
+  )
+```
+
+## Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Bachelor of Business Administration","2022-2025 (Planned)"  ,"Hanyang University","Seoul, South Korea"
+) %>%
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+## certificate
+
+yet
+
